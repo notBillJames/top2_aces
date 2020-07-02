@@ -11,14 +11,14 @@ OBP_lambda = lambda row: (row.H + row.BB + row.HBP) / (row.PA) if row.PA > 0 els
 AVG_lambda = lambda row: row.H / row.AB if row.AB > 0 else np.NaN
 
 stat_functions = [
-    ColFunction(name='pa', func=PA_lambda),
-    ColFunction(name='obp', func=OBP_lambda),
-    ColFunction(name='avg', func=AVG_lambda)
+    ColFunction(name='PA', func=PA_lambda),
+    ColFunction(name='OBP', func=OBP_lambda),
+    ColFunction(name='OBP', func=AVG_lambda)
 ]
 
 def format_df(df):
     for func in stat_functions:
-        df[func.name] = df.apply(func.func, axis=1)
+        df[f'{func.name}'] = df.apply(func.func, axis=1)
 
 def order_by(df, sort_column, ascending):
     df_copy = df.copy()
