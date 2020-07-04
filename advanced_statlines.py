@@ -17,10 +17,8 @@ stat_functions = [
 ]
 
 def format_df(df):
-    formatted_copy = df.copy()
     for func in stat_functions:
-        formatted_copy[func.name] = formatted_copy.apply(func.func, axis=1)
-    return formatted_copy
+        df[func.name] = df.apply(func.func, axis=1)
 
 def order_by(df, sort_column, ascending):
     df_copy = df.copy()
