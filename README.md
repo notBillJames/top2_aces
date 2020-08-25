@@ -6,4 +6,4 @@ Right now it's current function is to just make something in Python, and to test
 Later on in the project's life it will actually do what it's named and was created for. For now however, it will not.
 
 ### v 2.0
-Finally getting around to comoparing them to other pitchers
+Finally getting around to comparing them to other pitchers
